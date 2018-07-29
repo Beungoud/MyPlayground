@@ -3,6 +3,7 @@ const bodyParser = require('body-parser')
 const routes = require("./routes");
 const morgan = require("morgan");
 
+console.log("Starting...");
 const app = express();
 app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
