@@ -14,11 +14,12 @@ app.use(function(req, res, next) {
 app.use(bodyParser.json());
 app.use(morgan("dev"));
 
+app.use("/api", routes);
+
 app.use("/", (req, res, next)=>{
   res.send("Hello");
 });
 
-app.use("/api", routes);
 
 
 var server = app.listen(8080, function () {
