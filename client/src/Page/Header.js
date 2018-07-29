@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Icon, Header, Image, Container } from "semantic-ui-react";
+import {  Header,  Container } from "semantic-ui-react";
 
 const MenuHeader = () => {
   return (

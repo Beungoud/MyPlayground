@@ -32,12 +32,13 @@ class Main extends Component {
         console.log(reply);
 
         const playgrounds = reply.elements.map(element => {
-          if (element.type == "node") {
+          if (element.type === "node") {
             return [element.lat, element.lon];
           }
-          if (element.type == "way") {
+          if (element.type === "way") {
             return [element.center.lat, element.center.lon];
           }
+          return undefined;
         });
         this.setState({ playgrounds });
       });

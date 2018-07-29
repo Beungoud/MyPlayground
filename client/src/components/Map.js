@@ -1,5 +1,5 @@
-import React, { Component, createRef } from "react";
-import { Button, Icon } from "semantic-ui-react";
+import React, {  createRef } from "react";
+import {  Icon } from "semantic-ui-react";
 import { Map, TileLayer, Marker, Popup } from "react-leaflet";
 import Leaflet from "leaflet";
 
@@ -37,11 +37,10 @@ class MyMap extends React.Component {
 
   markersFromPlaygrounds = () => {
     const { playgrounds } = this.props;
-    console.log(Leaflet.Icon);
     return (
       <div>
-        {playgrounds.map(playground => (
-          <Marker icon={playGroundIcon} position={playground}>
+        {playgrounds.map((playground, index) => (
+          <Marker  key={index} icon={playGroundIcon} position={playground}>
             {" "}
           </Marker>
         ))}
