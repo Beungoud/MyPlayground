@@ -14,6 +14,9 @@ app.use(function(req, res, next) {
 app.use(bodyParser.json());
 app.use(morgan("dev"));
 
+app.use("/", (req, res, next)=>{
+  res.send("Hello");
+});
 
 app.use("/api", routes);
 
