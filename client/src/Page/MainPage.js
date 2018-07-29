@@ -23,7 +23,7 @@ class Main extends Component {
     }][out:json][timeout:25];(node["leisure"="playground"];way["leisure"="playground"];);out center;`;
     console.log(request);
     fetch(
-      `http://overpass-api.de/api/interpreter?data=${encodeURIComponent(
+      `https://overpass-api.de/api/interpreter?data=${encodeURIComponent(
         request
       )}`
     )
