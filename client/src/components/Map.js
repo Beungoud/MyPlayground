@@ -1,5 +1,5 @@
-import React, {  createRef } from "react";
-import {  Icon } from "semantic-ui-react";
+import React, { createRef } from "react";
+import { Icon } from "semantic-ui-react";
 import { Map, TileLayer, Marker, Popup } from "react-leaflet";
 import Leaflet from "leaflet";
 
@@ -40,7 +40,7 @@ class MyMap extends React.Component {
     return (
       <div>
         {playgrounds.map((playground, index) => (
-          <Marker  key={index} icon={playGroundIcon} position={playground}>
+          <Marker key={index} icon={playGroundIcon} position={playground}>
             {" "}
           </Marker>
         ))}
@@ -60,42 +60,40 @@ class MyMap extends React.Component {
     ) : null;
     const playGrounds = this.markersFromPlaygrounds();
     return (
-      <div>
-        <Map
-          onZoomend={event => onPositionUpdated(event.target.getBounds())}
-          onMoveend={event => onPositionUpdated(event.target.getBounds())}
-          ref={this.mapRef}
-          center={position}
-          zoom={this.state.zoom}
-          style={{ width: "100%", height: 400 }}
-        >
-          <TileLayer
-            attribution="&copy; <a href=&quot;http://osm.org/copyright&quot;>OpenStreetMap</a> contributors"
-            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-          />
-          {marker}
-          {playGrounds}
-          <div className="leaflet-top leaflet-left">
-            <div
-              className="leaflet-bar leaflet-control"
-              style={{ marginTop: "80px" }}
+      <Map
+        onZoomend={event => onPositionUpdated(event.target.getBounds())}
+        onMoveend={event => onPositionUpdated(event.target.getBounds())}
+        ref={this.mapRef}
+        center={position}
+        zoom={this.state.zoom}
+        style={{ position: "relative", width: "100%", height: "100%" }}
+      >
+        <TileLayer
+          attribution="&copy; <a href=&quot;http://osm.org/copyright&quot;>OpenStreetMap</a> contributors"
+          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+        />
+        {marker}
+        {playGrounds}
+        <div className="leaflet-top leaflet-left">
+          <div
+            className="leaflet-bar leaflet-control"
+            style={{ marginTop: "80px" }}
+          >
+            <a
+              href="#"
+              onClick={() => {
+                if (this.state.hasLocation)
+                  this.mapRef.current.leafletElement.panTo(position);
+              }}
             >
-              <a
-                href="#"
-                onClick={() => {
-                  if (this.state.hasLocation)
-                    this.mapRef.current.leafletElement.panTo(position);
-                }}
-              >
-                <Icon
-                  name="dot circle outline"
-                  style={{ fontSize: "1.3em", marginLeft: "4px" }}
-                />
-              </a>
-            </div>
+              <Icon
+                name="dot circle outline"
+                style={{ fontSize: "1.3em", marginLeft: "4px" }}
+              />
+            </a>
           </div>
-        </Map>
-      </div>
+        </div>
+      </Map>
     );
   }
 }

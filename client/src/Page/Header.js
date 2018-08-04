@@ -5,7 +5,9 @@ const MenuHeader = () => {
   return (
     <Container
       style={{
-        height: 100
+        position: "relative",
+        height: "100%",
+        width:"100%"
       }}
     >
       <Header
@@ -16,7 +18,7 @@ const MenuHeader = () => {
           fontSize: "2em",
           fontWeight: "normal",
           marginBottom: 0,
-          marginTop: "1.5em"
+          marginTop: "0"
         }}
       />{" "}
     </Container>

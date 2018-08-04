@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Segment } from "semantic-ui-react";
 import Map from "../components/Map";
 import { geolocated } from "react-geolocated";
+import { relative } from "path";
 
 class Main extends Component {
   constructor(props) {
@@ -47,13 +48,11 @@ class Main extends Component {
   render() {
     const { playgrounds } = this.state;
     return (
-      <Segment>
         <Map
           {...this.props}
           onPositionUpdated={this.positionUpdated}
           playgrounds={playgrounds}
         />
-      </Segment>
     );
   }
 }
@@ -62,6 +61,6 @@ export default geolocated({
   positionOptions: {
     enableHighAccuracy: true
   },
-  watchPosition: true,
+  watchPosition: false,
   userDecisionTimeout: 5000
 })(Main);
