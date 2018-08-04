@@ -1,6 +1,5 @@
 import React, { Component } from "react";
-import { Segment } from "semantic-ui-react";
-import Map from "../components/Map";
+import Map from "../components/LeafletMap";
 import { geolocated } from "react-geolocated";
 import { relative } from "path";
 

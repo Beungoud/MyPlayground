@@ -9,6 +9,7 @@
     "react-dom": "^16.3.2",
     "react-geolocated": "^2.4.0",
     "react-leaflet": "^2.0.0",
+    "react-openlayers": "^0.2.1",
     "react-router-dom": "^4.2.2",
     "react-scripts": "1.1.4",
     "react-transition-group": "^2.3.1",
@@ -22,7 +23,7 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
-  "proxy":"http://localhost:8080/",
+  "proxy": "http://localhost:8080/",
   "jshintConfig": {
     "esversion": 6
   }
